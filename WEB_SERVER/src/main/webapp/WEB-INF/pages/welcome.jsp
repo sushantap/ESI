@@ -53,19 +53,21 @@
 			<!--/.navbar-collapse -->
 		</div>
 	</div>
-	div class="jumbotron">
-	<div class="container">
-		<h1>Hello, ESI Test Page!</h1>
-		<p>This is a esi template page for ESI performance test. The page
-			contains 4 esi templates. One horizonatal pagelet, describing this
-			template itself. Three vertical pagelets below this showing news
-			articles</p>
-		<p>
-			<a class="btn btn-primary btn-lg" role="button">Learn more
-				&raquo;</a>
-		</p>
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Hello, ESI Test Page!</h1>
+			<p>This is a esi template page for ESI performance test. The page
+				contains 4 esi templates. One horizonatal pagelet, describing this
+				template itself. Three vertical pagelets below showing news articles</p>
+			<p>
+				<a class="btn btn-primary btn-lg" role="button">Learn more
+					&raquo;</a>
+			</p>
+		</div>
 	</div>
-	</div>
+
 	<div class="container">
 		<!-- Example row of columns -->
 		<div class="row">
@@ -89,25 +91,24 @@
 						&raquo;</a>
 				</p>
 			</div>
-
 			<div class="col-md-4">
 				<h2>Comic book targets children in slums</h2>
 				<p>There are no superheroes in this comic book. There is no
-					âslumdog millionaireâ either. There are only messages for
+					â€˜slumdog millionaireâ€™ either. There are only messages for
 					children living in slums; to stay away from tobacco and alcohol, to
-					know âbad touchâ and to keep the environment clean, among
-					others. âReach out! With Veera and Cheraâ â a comic book with
+					know â€˜bad touchâ€™ and to keep the environment clean, among
+					others. â€˜Reach out! With Veera and Cheraâ€™ â€” a comic book with
 					seven episodes in it, by Loyola College student Vijay Asokan, was
-					released at the Outreach Dayâ2014 celebrations of the collegeâs
+					released at the Outreach Dayâ€“2014 celebrations of the collegeâ€™s
 					department of outreach, on Monday. It is a simple strip in the form
 					of an interaction between Veera, a Loyola college student who
 					visits the slums as part of the outreach programme, and Chera, a
 					child from the slum who handles challenges normally faced by
-					children in slums in the cities. âChildren in slums do not know
+					children in slums in the cities. â€œChildren in slums do not know
 					the serious problems in life. That is why the comic strip has been
 					designed. Apart from creating awareness on the harmful effects of
 					tobacco and alcohol use, there is also an episode explaining child
-					abuse,â says Vijay.</p>
+					abuse,â€ says Vijay.</p>
 				<p>
 					<a class="btn btn-default" href="#" role="button">View details
 						&raquo;</a>
@@ -140,6 +141,6 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="resources/dist/js/bootstrap.min.js"></script>
+	<script src="resources/dist/css/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
