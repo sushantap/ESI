@@ -84,10 +84,8 @@ public class ESIHandler {
 		Writer writer=this.response.getWriter();
 		String cacheHtml = "";
 		int lastSegmentEnd=0;
-		//List of futures.
 		for (Segment segment : streamedSource) {
 			cacheHtml = cacheHtml.concat(segment.toString());
-			// if this tag is inside the previous tag (e.g. a server tag) then ignore it as it was already output along with the previous tag.
 			if (segment.getEnd()<=lastSegmentEnd) continue; 
 			lastSegmentEnd=segment.getEnd();
 			if (segment instanceof StartTag) {
@@ -121,7 +119,6 @@ public class ESIHandler {
 				writer.write(segment.toString());
 			}
 		}
-		//empty futures.
 		if(addToCache){
 			this.cache.put(this.pageLetConfig, cacheHtml);
 		}
