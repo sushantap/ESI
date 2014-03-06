@@ -1,0 +1,23 @@
+{
+    "lb_type":"random",
+    "ttl" : 30,
+    "servers":["localhost:8082"],
+    "url_map":{
+        "/ESI/welcome": {
+            "uri": "/WEB-SERVER1/welcome",
+        },
+        "/WEB-SERVER1/message": {
+            "ttl": 50,
+            "servers":["localhost:8082"],
+        },
+        "/welcome": {
+            "servers": ["localhost:8082"],
+        },
+        "/ESI/*": {
+            "uri": "/WEB-SERVER1/*",
+        },
+        "/*": {
+            "uri": "/*",
+        },
+    }
+}
