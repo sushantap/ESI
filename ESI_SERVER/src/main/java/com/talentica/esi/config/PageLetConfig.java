@@ -6,7 +6,7 @@ public class PageLetConfig {
 	private Set<String> servers;
 	private long ttl;
 	private final String URI;
-	
+
 	public PageLetConfig(Set<String> servers, long ttl, String URI) {
 		this.servers = servers;
 		this.ttl = ttl;
@@ -16,7 +16,7 @@ public class PageLetConfig {
 	public Set<String> getServers() {
 		return servers;
 	}
-	
+
 	public long getTtl() {
 		return ttl;
 	}
@@ -31,6 +31,10 @@ public class PageLetConfig {
 
 	public void setTtl(int ttl) {
 		this.ttl = ttl;
+	}
+
+	public boolean isCacheable(){
+		return this.ttl > 0;
 	}
 
 	@Override

@@ -60,7 +60,7 @@ public class ESIHandler {
 		if(null != pageLet){
 			String html = pageLet.getHtml();
 			streamedSource = new StreamedSource(new StringReader(html));
-			parseESITags(streamedSource, false);
+			parseESITags(streamedSource);
 		}else{
 			String URI = this.pageLetConfig.getURI();
 			HttpClient client = HttpClients.createDefault();
@@ -75,12 +75,15 @@ public class ESIHandler {
 				String html = EntityUtils.toString(response.getEntity());
 				this.response.setContentType("text/html");
 				streamedSource = new StreamedSource(new StringReader(html));
-				parseESITags(streamedSource, true);
+				String cacheHtml = parseESITags(streamedSource);
+				if(this.pageLetConfig.isCacheable()){
+					this.cache.put(this.pageLetConfig, cacheHtml);
+				}
 			}
 		}
 	}
 
-	private void parseESITags(StreamedSource streamedSource, boolean addToCache) throws IOException, InterruptedException, ExecutionException {
+	private String parseESITags(StreamedSource streamedSource ) throws IOException, InterruptedException, ExecutionException {
 		Writer writer=this.response.getWriter();
 		String cacheHtml = "";
 		int lastSegmentEnd=0;
@@ -98,8 +101,6 @@ public class ESIHandler {
 					int ttl = 0;
 					if(null != tag.getAttributes().get("ttl")){
 						ttl = Integer.valueOf(tag.getAttributes().get("ttl").getValue());
-					}else{
-						addToCache = false;
 					}
 					EsiConfig ec = this.esiServerResources.getEcConfig();
 					PageLetConfig childPageLetConfig = ec.getPageLetConfig(uri);
@@ -119,8 +120,6 @@ public class ESIHandler {
 				writer.write(segment.toString());
 			}
 		}
-		if(addToCache){
-			this.cache.put(this.pageLetConfig, cacheHtml);
-		}
+		return cacheHtml;
 	}
 }
