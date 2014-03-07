@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/")
-public class WelcomeController {
+public class NewsController {
 
-	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
 	public String printWelcome() throws IOException, InterruptedException {
 		Thread.sleep(2000);
-		return "welcome";
+		return "news";
 	}
 	
 	@RequestMapping(value = "/heading" , method = RequestMethod.GET)
