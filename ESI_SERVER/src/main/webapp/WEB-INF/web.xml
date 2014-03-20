@@ -30,7 +30,7 @@
 		<filter-class>com.talentica.esi.filter.EsiFilter</filter-class>
 		<init-param>
             <param-name>configFilePath</param-name>
-            <param-value>/TalenticaWorkspace/Tlabs/ESI_PROJ/ESI_SERVER/src/main/resources/config.json</param-value>
+            <param-value>/tmp/config.json</param-value>
         </init-param>
         <init-param>
             <param-name>filterOn</param-name>
