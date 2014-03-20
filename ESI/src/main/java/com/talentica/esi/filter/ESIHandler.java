@@ -62,6 +62,7 @@ public class ESIHandler {
 			streamedSource = new StreamedSource(new StringReader(html));
 			parseESITags(streamedSource);
 		}else{
+			System.err.println("did not get stuff from cache for pagelet ->" + this.pageLetConfig);
 			String URI = this.pageLetConfig.getURI();
 			HttpClient client = HttpClients.createDefault();
 			HttpGet request = new HttpGet(getURL(URI));
