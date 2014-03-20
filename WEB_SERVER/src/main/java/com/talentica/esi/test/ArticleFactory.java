@@ -5,7 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class ArticleFactory {
+	private final static Logger LOGGER = Logger.getLogger(ArticleFactory.class);
 	private final static int[] delay = new int[4];
 	static{
 		Properties prop = new Properties();
@@ -22,8 +25,11 @@ public class ArticleFactory {
 			e1.printStackTrace();
 		}
 	}
+
 	public static Article getHeading() throws InterruptedException{
+		LOGGER.error("sleeping heading for " + delay[0] + "seconds");
 		Thread.sleep(delay[0]);
+		LOGGER.debug("sleeping heading for " + delay[0] + "seconds");
 		return new Article("Hello, ESI Test Page!",
 				"This is a esi template page for ESI performance test. The page " +
 						"contains 4 esi templates. One horizonatal pagelet, describing this " +
@@ -32,6 +38,7 @@ public class ArticleFactory {
 	}
 
 	public static Article getArticle1() throws InterruptedException{
+		LOGGER.error("sleeping article1 for " + delay[1] + "seconds");
 		Thread.sleep(delay[1]);
 		return new Article("Nine phase Lok Sabha elections from April 7",
 				"The Election Commission on Wednesday announced a nine-phase poll " +
@@ -49,6 +56,7 @@ public class ArticleFactory {
 	}
 
 	public static Article getArticle2() throws InterruptedException{
+		LOGGER.error("sleeping article2 for " + delay[2] + "seconds");
 		Thread.sleep(delay[2]);
 		return new Article("Comic book targets children in slums",
 				"There are no superheroes in this comic book. There is no "+ 
@@ -70,6 +78,7 @@ public class ArticleFactory {
 	}
 
 	public static Article getArticle3() throws InterruptedException{
+		LOGGER.error("sleeping article3 for " + delay[3] + "seconds");
 		Thread.sleep(delay[3]);
 		return new Article("India restricts Bangladesh to 159",
 				"Electing to bowl first, India bundled out Bangladesh for 159 in "+
