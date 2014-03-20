@@ -1,9 +1,29 @@
 package com.talentica.esi.test;
 
-public class ArticleFactory {
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 
+public class ArticleFactory {
+	private final static int[] delay = new int[4];
+	static{
+		Properties prop = new Properties();
+		File file = new File("/tmp/article.properties");
+		FileReader reader;
+		try {
+			reader = new FileReader(file);
+			prop.load(reader);
+			delay[0]=Integer.valueOf(prop.getProperty("heading"));
+			delay[1]=Integer.valueOf(prop.getProperty("article1"));
+			delay[2]=Integer.valueOf(prop.getProperty("article2"));
+			delay[3]=Integer.valueOf(prop.getProperty("article3"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
 	public static Article getHeading() throws InterruptedException{
-		Thread.sleep(1000);
+		Thread.sleep(delay[0]);
 		return new Article("Hello, ESI Test Page!",
 				"This is a esi template page for ESI performance test. The page " +
 						"contains 4 esi templates. One horizonatal pagelet, describing this " +
@@ -12,7 +32,7 @@ public class ArticleFactory {
 	}
 
 	public static Article getArticle1() throws InterruptedException{
-		Thread.sleep(5000);
+		Thread.sleep(delay[1]);
 		return new Article("Nine phase Lok Sabha elections from April 7",
 				"The Election Commission on Wednesday announced a nine-phase poll " +
 						"for the 16th Lok Sabha from April 7 to May 12. The counting of votes " +
@@ -29,7 +49,7 @@ public class ArticleFactory {
 	}
 
 	public static Article getArticle2() throws InterruptedException{
-		Thread.sleep(1000);
+		Thread.sleep(delay[2]);
 		return new Article("Comic book targets children in slums",
 				"There are no superheroes in this comic book. There is no "+ 
 						"slumdog millionaire either. There are only messages for children "+
@@ -46,10 +66,11 @@ public class ArticleFactory {
 						"That is why the comic strip has been designed. Apart from creating "+
 						"awareness on the harmful effects of tobacco and alcohol use, there is "+
 				"also an episode explaining child abuse, says Vijay.");
+
 	}
 
 	public static Article getArticle3() throws InterruptedException{
-		Thread.sleep(10000);
+		Thread.sleep(delay[3]);
 		return new Article("India restricts Bangladesh to 159",
 				"Electing to bowl first, India bundled out Bangladesh for 159 in "+
 						"their final league match of the Asia Cup on Wednesday. Brief scores: "+
