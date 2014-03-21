@@ -29,7 +29,7 @@ public class PageLetConfig {
 		this.servers = servers;
 	}
 
-	public void setTtl(int ttl) {
+	public void setTtl(long ttl) {
 		this.ttl = ttl;
 	}
 

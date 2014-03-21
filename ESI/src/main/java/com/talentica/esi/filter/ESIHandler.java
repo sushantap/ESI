@@ -99,9 +99,9 @@ public class ESIHandler {
 				case "esi:include":
 					this.response.flushBuffer();
 					String uri = tag.getAttributes().get("src").getValue();
-					int ttl = 0;
+					long ttl = this.pageLetConfig.getTtl();
 					if(null != tag.getAttributes().get("ttl")){
-						ttl = Integer.valueOf(tag.getAttributes().get("ttl").getValue());
+						ttl = Long.valueOf(tag.getAttributes().get("ttl").getValue());
 					}
 					EsiConfig ec = this.esiServerResources.getEcConfig();
 					PageLetConfig childPageLetConfig = ec.getPageLetConfig(uri);

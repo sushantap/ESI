@@ -36,17 +36,17 @@
 		</div>
 	</div>
 	<esi:include src="/WEB-SERVER1/heading"
-		alt="http://bak.example.com/2.html" onerror="continue" ttl=10000 />
+		alt="http://bak.example.com/2.html" onerror="continue" />
 
 	<div class="container">
 		<!-- Example row of columns -->
 		<div class="row">
 			<esi:include src="/WEB-SERVER1/article1"
-				alt="http://bak.example.com/2.html" onerror="continue" ttl=10000 />
+				alt="http://bak.example.com/2.html" onerror="continue" />
 			<esi:include src="/WEB-SERVER1/article2"
-				alt="http://bak.example.com/2.html" onerror="continue" ttl=10000 />
+				alt="http://bak.example.com/2.html" onerror="continue" />
 			<esi:include src="/WEB-SERVER1/article3"
-				alt="http://bak.example.com/2.html" onerror="continue" ttl=10000 />
+				alt="http://bak.example.com/2.html" onerror="continue" ttl=50/>
 		</div>
 		<hr>
 		<footer>
