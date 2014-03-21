@@ -12,7 +12,7 @@ public class ArticleFactory {
 	private final static int[] delay = new int[4];
 	static{
 		Properties prop = new Properties();
-		File file = new File("/tmp/article.properties");
+		File file = new File("/opt/esi/article.properties");
 		FileReader reader;
 		try {
 			reader = new FileReader(file);
@@ -29,7 +29,6 @@ public class ArticleFactory {
 	public static Article getHeading() throws InterruptedException{
 		LOGGER.error("sleeping heading for " + delay[0] + "seconds");
 		Thread.sleep(delay[0]);
-		LOGGER.debug("sleeping heading for " + delay[0] + "seconds");
 		return new Article("Hello, ESI Test Page!",
 				"This is a esi template page for ESI performance test. The page " +
 						"contains 4 esi templates. One horizonatal pagelet, describing this " +
