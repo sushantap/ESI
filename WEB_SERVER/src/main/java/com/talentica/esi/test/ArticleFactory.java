@@ -9,7 +9,7 @@ public class ArticleFactory {
 	private final static int[] delay = new int[4];
 	static{
 		Properties prop = new Properties();
-		File file = new File("/tmp/article.properties");
+		File file = new File("/opt/esi/article.properties");
 		FileReader reader;
 		try {
 			reader = new FileReader(file);
